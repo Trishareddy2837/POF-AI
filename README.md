@@ -1,53 +1,150 @@
-# POF-AI: PATH OF FUTURE
+# 🚀 POF-AI — Path of Future
 
-Career exploration and planning for students, built with React, TypeScript, Tailwind CSS, and Supabase.
+### AI-Powered Career Exploration & Planning Platform
 
-## What is included
+<p align="center">
+  <a href="https://pof-lk7yhgjkl-trisha-c29b.vercel.app/">
+    <img src="https://img.shields.io/badge/🌐_Live_Demo-Visit_Website-6C63FF?style=for-the-badge" alt="Live Demo" />
+  </a>
+  <a href="https://github.com/Trishareddy2837/POF-AI">
+    <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github" alt="GitHub Repository" />
+  </a>
+</p>
 
-- A redesigned public home page, course and career carousels, opportunity cards, responsive navigation, and the POF-AI visual system.
-- Account creation, email sign-in, Google sign-in, password visibility, and separate publisher/admin entry points.
-- A combined dashboard and progress overview, profile form, AI career analysis, a catalogue of 100 careers, interactive recommendations, and saved personalized roadmaps.
-- Roadmap phases with related course and learning-resource suggestions, including YouTube topic search links.
-- Course, internship, hackathon, and job pages. Example catalogue entries are labelled as examples; externally sourced listings are shown only when they meet the page's source and freshness checks.
-- Resume draft editing, PDF/DOCX text extraction in the browser, private uploads for signed-in users, job-description suggestions from the configured AI provider, and print-to-PDF.
-- Roadmap-aware LeetCode topic links. POF-AI does not execute or submit code and does not read LeetCode activity.
-- A light/dark appearance toggle and a trusted-role admin dashboard for platform counts and account management.
-- The earlier quiz pages are hidden while that feature is deferred; the old assessment SQL is retained for a future rebuild and is not needed for the new core setup.
+---
 
-## Local setup
+## 🌟 About the Project
 
-1. Install Node.js LTS and run `npm install`.
-2. Create a Supabase project and apply migrations `0001` through `0008` in order. Then apply `0010_profile_education_details.sql` to enable the extra profile education fields. Skip `0009_secure_assessments_and_analytics.sql`; assessments are deferred and this site version does not need it. If you already partly ran 0009, do not rerun it for this release; 0010 does not depend on it.
-3. Copy `.env.example` to `.env` and set `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`. Only the public anon key belongs in frontend variables. Never place a service-role key in a `VITE_` variable.
-4. In Supabase Authentication URL Configuration, set the Site URL and add `/auth/callback` and `/reset-password` redirect URLs for local and deployed sites.
-5. For Google sign-in, enable the Google provider in Supabase and add Supabase's callback URL to the Google OAuth client's allowed redirect URLs.
-6. Run `npm run dev` to start the local site.
+**POF-AI (Path of Future)** is a career exploration and planning platform designed to help students navigate their professional journeys. It aims to make career planning more accessible by bringing career-related resources and planning tools together in one place.
 
-Without Supabase, public browsing and clearly labelled demo roadmap previews work. Saving account data, private uploads, real authentication, and admin controls need the configured Supabase project.
+🔗 **Explore the live application:** [pof-lk7yhgjkl-trisha-c29b.vercel.app](https://pof-lk7yhgjkl-trisha-c29b.vercel.app/)
 
-## AI and Edge Functions
+## ✨ Key Highlights
 
-AI use is optional and stays server-side. Configure the existing secrets on Supabase Edge Functions: `AI_API_KEY`, `AI_MODEL`, and optionally `AI_BASE_URL`. Deploy the `career-analysis` function for career analysis, roadmap generation, and resume-tailoring suggestions. A user's resume text and job description are sent only after the user checks the consent box and requests suggestions; contact details are removed first. Do not enter confidential information.
+- 🎯 **Career Exploration** — Support the process of exploring career opportunities.
+- 🧭 **Career Planning** — Help users organize their professional goals.
+- 💻 **Modern Web Interface** — A responsive frontend built with modern web technologies.
+- 🔐 **Backend Integration** — Supabase integration for supported backend functionality.
+- ☁️ **Live Deployment** — Hosted on Vercel.
 
-AI generated content is validated by the app. If the provider returns invalid data or fails, the app reports the failure rather than silently presenting it as a successful personalized result. The labelled demo roadmap mode is separate from real AI.
+## 🛠️ Tech Stack
 
-## Roles and administration
+| Technology | Purpose |
+|---|---|
+| ⚛️ React | User interface development |
+| 📘 TypeScript | Type-safe application development |
+| ⚡ Vite | Development server and build tooling |
+| 🎨 Tailwind CSS | UI styling |
+| 🗄️ Supabase | Backend services and data integration |
+| ▲ Vercel | Application deployment |
 
-- `/publisher` is for invited publisher accounts. Publisher membership and publishing permissions are enforced by Supabase policies.
-- `/admin/login` and `/admin` are for users whose trusted Supabase `app_metadata.role` is `careerforge_admin`. A profile field or browser setting cannot grant this role.
-- Deploy `supabase/functions/pof-admin` for admin overview and account-management actions. It uses Supabase's server-side service-role environment; never expose that key to the browser.
-- Admin actions include inspecting user accounts and counts, changing display names, suspending/restoring access, and deleting an account. Use an administrator account only for trusted staff.
+<p>
+  <img src="https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white" alt="Vite" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat&logo=supabase&logoColor=white" alt="Supabase" />
+  <img src="https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white" alt="Vercel" />
+</p>
 
-## Data and integrations
+## 🚀 Getting Started
 
-Curated course and career content is local catalogue data, not a live provider feed. Opportunity examples are labelled and do not represent confirmed open vacancies. External applications, course enrollment synchronization, certificates, LeetCode activity, and email notifications are not integrated. User-marked progress is self-reported.
+Follow these steps to run the project locally.
 
-PDF and DOCX resume text extraction happens in the browser. Scanned image-only PDFs do not include OCR and may produce no extracted text. Private resume storage needs migration `0008` and the configured private storage bucket/policies.
+### Prerequisites
 
-## Checks
+Make sure you have installed:
 
-Run `npm test`, `npm run lint`, and `npm run build` from this folder. These checks do not validate live Supabase policies, OAuth configuration, Edge Function secrets, or production provider calls. Review and apply SQL against a development Supabase project before production.
+- [Node.js](https://nodejs.org/)
+- npm (included with Node.js)
+- [Git](https://git-scm.com/)
 
-## Deployment
+### 1. Clone the Repository
 
-Run `npm run build`; the static site is written to `dist/`. Configure the two `VITE_SUPABASE_` values on your host, add the deployed auth URLs in Supabase, and configure single-page-app rewrites to `/index.html`. Deploy the needed Supabase migrations and Edge Functions separately.
+```bash
+git clone https://github.com/Trishareddy2837/POF-AI.git
+cd POF-AI
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure Environment Variables
+
+If the application requires Supabase credentials, create a local `.env` file using the variable names documented in `.env.example`.
+
+```bash
+cp .env.example .env
+```
+
+Add the appropriate values from your Supabase project. Never commit real credentials, access tokens, or secret keys to GitHub.
+
+### 4. Start the Development Server
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed in your terminal.
+
+### 5. Build for Production
+
+```bash
+npm run build
+```
+
+Vite generates the production build in the `dist` directory by default.
+
+## ☁️ Deployment
+
+The application is deployed using **Vercel**.
+
+🌐 **Live Website:** [Launch POF-AI](https://pof-lk7yhgjkl-trisha-c29b.vercel.app/)
+
+Future changes pushed to the connected GitHub branch can trigger automatic deployments, depending on the Vercel project settings.
+
+## 📁 Project Structure
+
+```text
+POF-AI/
+├── src/             # Application source code
+├── supabase/        # Supabase-related project files
+├── tests/           # Test files
+├── public/          # Public assets, if configured
+├── package.json     # Dependencies and scripts
+├── package-lock.json
+├── vite.config.ts   # Vite configuration
+├── tailwind.config.ts
+├── tsconfig.json    # TypeScript configuration
+└── README.md        # Project documentation
+```
+
+*Note: The exact files and folders may vary depending on the current repository structure.*
+
+## 🔒 Security
+
+- Keep environment files containing credentials out of version control.
+- Use environment variables for application configuration.
+- Never expose Supabase service-role keys or other privileged secrets in frontend code.
+- Configure backend permissions and database access policies appropriately.
+
+## 🎯 Project Goals
+
+POF-AI aims to provide a convenient starting point for career exploration and planning through a modern web application.
+
+## 👩‍💻 Author
+
+**Trisha Reddy**
+**Aashiq ilahi**
+
+- 🌐 [Live Project](https://pof-lk7yhgjkl-trisha-c29b.vercel.app/)
+- 💻 [GitHub Profile](https://github.com/Trishareddy2837)
+
+---
+
+<p align="center">
+  <b>✨ Explore possibilities. Plan your future. Build your path. ✨</b>
+</p>
