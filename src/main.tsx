@@ -1,0 +1,10 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import { AppRoutes } from './app/App';
+import { AuthProvider } from './app/AuthProvider';
+import { AnalysisProvider } from './app/AnalysisProvider';
+import { ProfileProvider } from './app/ProfileProvider';
+import './styles/index.css';
+if (localStorage.getItem('pof-ai-theme') === 'dark') document.documentElement.dataset.theme = 'dark';
+ReactDOM.createRoot(document.getElementById('root')!).render(<React.StrictMode><BrowserRouter><AuthProvider><ProfileProvider><AnalysisProvider><AppRoutes /></AnalysisProvider></ProfileProvider></AuthProvider></BrowserRouter></React.StrictMode>);
