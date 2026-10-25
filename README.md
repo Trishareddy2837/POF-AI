@@ -3,7 +3,7 @@
 ### AI-Powered Career Exploration & Planning Platform
 
 <p align="center">
-  <a href="https://pof-lk7yhgjkl-trisha-c29b.vercel.app/">
+  <a href="https://pof-cvx2ttotx-trisha-c29b.vercel.app/">
     <img src="https://img.shields.io/badge/🌐_Live_Demo-Visit_Website-6C63FF?style=for-the-badge" alt="Live Demo" />
   </a>
   <a href="https://github.com/Trishareddy2837/POF-AI">
@@ -17,15 +17,15 @@
 
 **POF-AI (Path of Future)** is a career exploration and planning platform designed to help students navigate their professional journeys. It aims to make career planning more accessible by bringing career-related resources and planning tools together in one place.
 
-🔗 **Explore the live application:** [pof-lk7yhgjkl-trisha-c29b.vercel.app](https://pof-lk7yhgjkl-trisha-c29b.vercel.app/)
+🌐 **Explore the live application:** [Launch POF-AI](https://pof-cvx2ttotx-trisha-c29b.vercel.app/)
 
 ## ✨ Key Highlights
 
-- 🎯 **Career Exploration** — Support the process of exploring career opportunities.
-- 🧭 **Career Planning** — Help users organize their professional goals.
-- 💻 **Modern Web Interface** — A responsive frontend built with modern web technologies.
+- 🎯 **Career Exploration** — Explore career opportunities and potential professional pathways.
+- 🧭 **Career Planning** — Organize career goals and plan professional development.
+- 💻 **Modern Web Interface** — A modern frontend built with contemporary web technologies.
 - 🔐 **Backend Integration** — Supabase integration for supported backend functionality.
-- ☁️ **Live Deployment** — Hosted on Vercel.
+- ☁️ **Cloud Deployment** — Deployed using Vercel for online access.
 
 ## 🛠️ Tech Stack
 
@@ -100,48 +100,48 @@ Vite generates the production build in the `dist` directory by default.
 
 ## ☁️ Deployment
 
-The application is deployed using **Vercel**.
+POF-AI is deployed using **Vercel**.
 
-🌐 **Live Website:** [Launch POF-AI](https://pof-lk7yhgjkl-trisha-c29b.vercel.app/)
+🌐 **Live Website:** [https://pof-cvx2ttotx-trisha-c29b.vercel.app/](https://pof-cvx2ttotx-trisha-c29b.vercel.app/)
 
-Future changes pushed to the connected GitHub branch can trigger automatic deployments, depending on the Vercel project settings.
+When the GitHub repository is connected to Vercel, new commits can trigger automatic deployments depending on the project's deployment settings.
 
 ## 📁 Project Structure
 
 ```text
 POF-AI/
-├── src/             # Application source code
-├── supabase/        # Supabase-related project files
-├── tests/           # Test files
-├── public/          # Public assets, if configured
-├── package.json     # Dependencies and scripts
-├── package-lock.json
-├── vite.config.ts   # Vite configuration
-├── tailwind.config.ts
-├── tsconfig.json    # TypeScript configuration
-└── README.md        # Project documentation
+├── src/                 # Application source code
+├── supabase/            # Supabase-related project files
+├── tests/               # Test files
+├── public/              # Public assets, if present
+├── package.json         # Dependencies and scripts
+├── package-lock.json    # Locked dependency versions
+├── vite.config.ts       # Vite configuration
+├── tailwind.config.ts   # Tailwind CSS configuration, if present
+├── tsconfig.json        # TypeScript configuration
+└── README.md            # Project documentation
 ```
 
-*Note: The exact files and folders may vary depending on the current repository structure.*
+*Note: The exact project structure may vary depending on the files currently present in the repository.*
 
-## 🔒 Security
+## 🔒 Security Best Practices
 
 - Keep environment files containing credentials out of version control.
 - Use environment variables for application configuration.
 - Never expose Supabase service-role keys or other privileged secrets in frontend code.
-- Configure backend permissions and database access policies appropriately.
+- Configure appropriate database access policies and permissions.
+- Rotate any credentials that may have been accidentally exposed.
 
 ## 🎯 Project Goals
 
-POF-AI aims to provide a convenient starting point for career exploration and planning through a modern web application.
+POF-AI aims to make career exploration and planning more accessible through a modern web platform.
 
 ## 👩‍💻 Author
 
 **Trisha Reddy**
-**Aashiq ilahi**
 
-- 🌐 [Live Project](https://pof-lk7yhgjkl-trisha-c29b.vercel.app/)
-- 💻 [GitHub Profile](https://github.com/Trishareddy2837)
+- 🌐 **Live Project:** [Launch POF-AI](https://pof-cvx2ttotx-trisha-c29b.vercel.app/)
+- 💻 **GitHub Repository:** [Trishareddy2837/POF-AI](https://github.com/Trishareddy2837/POF-AI)
 
 ---
 
